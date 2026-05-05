@@ -41,7 +41,7 @@
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color:#f5f5f5;">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
@@ -61,12 +61,12 @@
   </div>
 </nav>
 
-<section class="hero">
+<section class="hero" style="background-color:#f5f5f5;">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">More with LESS <br> Local Scene Representations <br> for Tactile Imaging</h1>
+          <h1 class="title is-1 publication-title">More with LESS <br> <span style="font-size:0.7em;">Local Scene Representations for Tactile Imaging</span></h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://zoharri.github.io/">Zohar Rimon<sup>1</sup></a>,</span>
@@ -81,6 +81,7 @@
             <span class="author-block">
               <a href="https://www.linkedin.com/in/alon-malka-024567232/">Alon Malka<sup>1</sup></a>,
             </span>
+            <br>
             <span class="author-block">
               <a href="https://www.linkedin.com/in/roy-holland-988621170/">Roy Holland<sup>1,2</sup></a>,
             </span>
@@ -90,31 +91,33 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Technion - Israel Institute of Technology &thinsp;</span>
-            <span class="author-block">Rambam Health Care Campus</span>
+            <span class="author-block"><sup>1</sup>Technion - Israel Institute of Technology &thinsp;</span>
+            <span class="author-block"><sup>2</sup>Rambam Health Care Campus</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <!-- <span class="link-block">
-                <a href="./static/paper/ArtificialPalpation.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded"
+                   style="background:#aaa;border-color:#aaa;color:#fff;cursor:default;pointer-events:none;"
+                   title="Coming soon">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
                   <span>Paper</span>
                 </a>
-              </span> -->
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/pdf/2511.16596"
-                   class="external-link button is-normal is-rounded is-dark">
+              </span>
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded"
+                   style="background:#aaa;border-color:#aaa;color:#fff;cursor:default;pointer-events:none;"
+                   title="Coming soon">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span> -->
+              </span>
               <!-- Video Link. -->
               <!-- <span class="link-block">
                 <a href="Coming Soon"
@@ -136,14 +139,15 @@
                   </a>
               </span>
               <!-- Dataset Link. -->
-              <!-- <span class="link-block">
-                <a href="https://zenodo.org/records/17608184"
+              <span class="link-block">
+                <a href="https://zenodo.org/communities/artificial-palpation"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Data</span>
-                  </a> -->
+                </a>
+              </span>
             </div>
 
           </div>
@@ -153,23 +157,784 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<section class="hero teaser" style="background-color:#f5f5f5;">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <h2 class="subtitle has-text-centered">
-        Website Coming Soon!
+      <video id="teaser" autoplay muted loop playsinline style="width:60%;display:block;margin:0 auto;">
+        <source src="./static/videos/hand_held/handheld_demo.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered" style="margin-top:1rem;">
+        Data Driven, 3D, Hand-Held, Generalizable Tactile Imaging
       </h2>
     </div>
   </div>
 </section>
 
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item" style="margin:0 12px;">
+          <div style="display:flex;gap:2px;">
+            <div style="position:relative;flex:1;">
+              <span style="position:absolute;bottom:8px;left:8px;color:white;font-size:14px;font-weight:bold;">X50</span>
+              <video autoplay controls muted loop playsinline style="width:100%;display:block;">
+                <source src="./static/videos/reconstruction/singles/pred_single_2.mp4" type="video/mp4">
+              </video>
+              <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+                <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+              </div>
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
+            </div>
+            <div style="position:relative;flex:1;">
+              <img src="./static/images/gt_frames/gt_single_2.png" style="width:100%;display:block;">
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="item" style="margin:0 12px;">
+          <div style="display:flex;gap:2px;">
+            <div style="position:relative;flex:1;">
+              <span style="position:absolute;bottom:8px;left:8px;color:white;font-size:14px;font-weight:bold;">X50</span>
+              <video autoplay controls muted loop playsinline style="width:100%;display:block;">
+                <source src="./static/videos/reconstruction/pred_connected_triple.mp4" type="video/mp4">
+              </video>
+              <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+                <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+              </div>
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
+            </div>
+            <div style="position:relative;flex:1;">
+              <img src="./static/images/gt_frames/gt_connected_triple.png" style="width:100%;display:block;">
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="item" style="margin:0 12px;">
+          <div style="display:flex;gap:2px;">
+            <div style="position:relative;flex:1;">
+              <span style="position:absolute;bottom:8px;left:8px;color:white;font-size:14px;font-weight:bold;">X50</span>
+              <video autoplay controls muted loop playsinline style="width:100%;display:block;">
+                <source src="./static/videos/reconstruction/singles/pred_single_0.mp4" type="video/mp4">
+              </video>
+              <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+                <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+              </div>
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
+            </div>
+            <div style="position:relative;flex:1;">
+              <img src="./static/images/gt_frames/gt_single_0.png" style="width:100%;display:block;">
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="item" style="margin:0 12px;">
+          <div style="display:flex;gap:2px;">
+            <div style="position:relative;flex:1;">
+              <span style="position:absolute;bottom:8px;left:8px;color:white;font-size:14px;font-weight:bold;">X50</span>
+              <video autoplay controls muted loop playsinline style="width:100%;display:block;">
+                <source src="./static/videos/reconstruction/pred_double.mp4" type="video/mp4">
+              </video>
+              <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+                <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+              </div>
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
+            </div>
+            <div style="position:relative;flex:1;">
+              <img src="./static/images/gt_frames/gt_double.png" style="width:100%;display:block;">
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="item" style="margin:0 12px;">
+          <div style="display:flex;gap:2px;">
+            <div style="position:relative;flex:1;">
+              <span style="position:absolute;bottom:8px;left:8px;color:white;font-size:14px;font-weight:bold;">X50</span>
+              <video autoplay controls muted loop playsinline style="width:100%;display:block;">
+                <source src="./static/videos/reconstruction/singles/pred_single_4.mp4" type="video/mp4">
+              </video>
+              <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+                <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+              </div>
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
+            </div>
+            <div style="position:relative;flex:1;">
+              <img src="./static/images/gt_frames/gt_single_4.png" style="width:100%;display:block;">
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="item" style="margin:0 12px;">
+          <div style="display:flex;gap:2px;">
+            <div style="position:relative;flex:1;">
+              <span style="position:absolute;bottom:8px;left:8px;color:white;font-size:14px;font-weight:bold;">X50</span>
+              <video autoplay controls muted loop playsinline style="width:100%;display:block;">
+                <source src="./static/videos/reconstruction/pred_connected_double.mp4" type="video/mp4">
+              </video>
+              <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+                <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+              </div>
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
+            </div>
+            <div style="position:relative;flex:1;">
+              <img src="./static/images/gt_frames/gt_connected_double.png" style="width:100%;display:block;">
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="item" style="margin:0 12px;">
+          <div style="display:flex;gap:2px;">
+            <div style="position:relative;flex:1;">
+              <span style="position:absolute;bottom:8px;left:8px;color:white;font-size:14px;font-weight:bold;">X50</span>
+              <video autoplay controls muted loop playsinline style="width:100%;display:block;">
+                <source src="./static/videos/reconstruction/singles/pred_single_1.mp4" type="video/mp4">
+              </video>
+              <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+                <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+              </div>
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
+            </div>
+            <div style="position:relative;flex:1;">
+              <img src="./static/images/gt_frames/gt_single_1.png" style="width:100%;display:block;">
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="item" style="margin:0 12px;">
+          <div style="display:flex;gap:2px;">
+            <div style="position:relative;flex:1;">
+              <span style="position:absolute;bottom:8px;left:8px;color:white;font-size:14px;font-weight:bold;">X50</span>
+              <video autoplay controls muted loop playsinline style="width:100%;display:block;">
+                <source src="./static/videos/reconstruction/pred_triple.mp4" type="video/mp4">
+              </video>
+              <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+                <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+              </div>
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
+            </div>
+            <div style="position:relative;flex:1;">
+              <img src="./static/images/gt_frames/gt_triple.png" style="width:100%;display:block;">
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="item" style="margin:0 12px;">
+          <div style="display:flex;gap:2px;">
+            <div style="position:relative;flex:1;">
+              <span style="position:absolute;bottom:8px;left:8px;color:white;font-size:14px;font-weight:bold;">X50</span>
+              <video autoplay controls muted loop playsinline style="width:100%;display:block;">
+                <source src="./static/videos/reconstruction/singles/pred_single_3.mp4" type="video/mp4">
+              </video>
+              <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+                <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+              </div>
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
+            </div>
+            <div style="position:relative;flex:1;">
+              <img src="./static/images/gt_frames/gt_single_3.png" style="width:100%;display:block;">
+              <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== OVERVIEW ==================== -->
+<section class="section" id="overview" style="background-color:#f5f5f5;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Overview</h2>
+
+    <figure class="image" style="margin-bottom:2.5rem;">
+      <img src="./static/images/overview_figure.png" alt="LESS overview: data collection, local encoder, zero-shot generalization, real-time hand-held demo">
+    </figure>
+
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="content is-size-5">
+          <p>
+            Palpation — the use of touch in medical examination — remains highly relevant today.
+            In breast cancer, over 40% of US cases are first detected by palpation,
+            motivating the development of <em>tactile imaging</em>: reconstructing the internal
+            structure of soft objects from touch measurements</p>
+          <p>
+            We propose <strong>LESS</strong> (<strong>L</strong>ocal <strong>E</strong>ncoder for <strong>S</strong>patial <strong>S</strong>ensing), a
+            tactile imaging approach that exploits the local nature of touch. LESS achieves zero-shot
+            <strong>compositional generalization</strong> to unseen geometries, supports spatial uncertainty estimation, and enables
+            the first <strong>real-time, hand-held</strong> tactile imaging device with
+            <strong>3D reconstruction</strong></p>
+        </div>
+
+        <div class="has-text-centered" style="margin-top:2.5rem;">
+          <a href="#toc" style="color:inherit;text-decoration:none;">
+            <p class="is-size-5">
+              <strong>Curious how we pulled this off?</strong><br>
+              Follow the sections below. &darr;
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TABLE OF CONTENTS ==================== -->
+<section class="section" id="toc" style="background-color:#f5f5f5;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Contents</h2>
+    <div class="columns is-multiline is-centered">
+
+      <div class="column is-one-quarter has-text-centered">
+        <a href="#data-collection" style="color:inherit;">
+          <div class="box" style="height:100%;">
+            <span class="icon is-large" style="color:#3273dc;">
+              <i class="fas fa-robot fa-2x"></i>
+            </span>
+            <p class="title is-6" style="margin-top:0.75rem;">Data Collection</p>
+            <p class="is-size-7 has-text-grey">800h of tactile data + MRI</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="column is-one-quarter has-text-centered">
+        <a href="#less" style="color:inherit;">
+          <div class="box" style="height:100%;">
+            <span class="icon is-large" style="color:#3273dc;">
+              <i class="fas fa-brain fa-2x"></i>
+            </span>
+            <p class="title is-6" style="margin-top:0.75rem;">LESS</p>
+            <p class="is-size-7 has-text-grey">Local Encoder for Spatial Sensing</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="column is-one-quarter has-text-centered">
+        <a href="#results" style="color:inherit;">
+          <div class="box" style="height:100%;">
+            <span class="icon is-large" style="color:#3273dc;">
+              <i class="fas fa-chart-bar fa-2x"></i>
+            </span>
+            <p class="title is-6" style="margin-top:0.75rem;">Results</p>
+            <p class="is-size-7 has-text-grey">Generalizable 3D reconstruction</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="column is-one-quarter has-text-centered">
+        <a href="#demo" style="color:inherit;">
+          <div class="box" style="height:100%;">
+            <span class="icon is-large" style="color:#3273dc;">
+              <i class="fas fa-hand-paper fa-2x"></i>
+            </span>
+            <p class="title is-6" style="margin-top:0.75rem;">Hand Held</p>
+            <p class="is-size-7 has-text-grey">Real-time hand-held imaging</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DATA COLLECTION ==================== -->
+<section class="section" id="data-collection" style="background-color:#f5f5f5;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Data Collection</h2>
+
+    <!-- Row 1: text LEFT, video RIGHT -->
+    <div class="columns is-vcentered" style="margin-bottom:3rem;">
+      <div class="column is-5">
+        <div class="content is-size-5">
+          <p>
+            We manufacture a soft, modular phantom consisting of a breast-shaped silicone shell and
+            a gel insert containing a harder inclusion that varies in shape and location.
+            The insert can be rotated inside the shell to produce different phantom configurations</p>
+        </div>
+      </div>
+      <div class="column is-7">
+        <video autoplay muted loop playsinline style="width:100%;border-radius:10px;display:block;">
+          <source src="./static/videos/data_collection/phantom_animation.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Row 2: video LEFT, text RIGHT -->
+    <div class="columns is-vcentered" style="margin-bottom:3rem;">
+      <div class="column is-7">
+        <div style="position:relative;">
+          <video autoplay muted loop playsinline style="width:100%;border-radius:10px;display:block;">
+            <source src="./static/videos/data_collection/data_collection_timelapse.mp4" type="video/mp4">
+          </video>
+          <span style="position:absolute;top:10px;left:12px;color:white;font-size:22px;font-weight:bold;">X50</span>
+        </div>
+      </div>
+      <div class="column is-5">
+        <div class="content is-size-5">
+          <p>
+            Using a motorized lift and a Franka Panda manipulator equipped with a
+            gel-based tactile sensor, we collect over 800 hours of tactile
+            interaction data across the phantom library</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: text LEFT, video RIGHT -->
+    <div class="columns is-vcentered">
+      <div class="column is-5">
+        <div class="content is-size-5">
+          <p>
+            To obtain ground-truth internal geometry, each phantom is scanned with an
+            MRI machine, producing volumetric images that clearly resolve the
+            phantom's internal components</p>
+        </div>
+      </div>
+      <div class="column is-7">
+        <div style="position:relative;">
+          <video autoplay muted loop playsinline style="width:100%;border-radius:10px;display:block;">
+            <source src="./static/videos/data_collection/mri_ground_truth.mp4" type="video/mp4">
+          </video>
+          <div style="position:absolute;top:50%;right:12px;transform:translateY(-50%);background:rgba(0,0,0,0.55);border-radius:6px;padding:8px 12px;">
+            <div style="display:flex;align-items:center;gap:7px;margin-bottom:6px;">
+              <span style="width:12px;height:12px;border-radius:2px;background:#888;flex-shrink:0;"></span>
+              <span style="color:white;font-size:13px;">Gel insert</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:7px;margin-bottom:6px;">
+              <span style="width:12px;height:12px;border-radius:2px;background:#e05252;flex-shrink:0;"></span>
+              <span style="color:white;font-size:13px;">Inclusion</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:7px;">
+              <span style="width:12px;height:12px;border-radius:2px;background:#eee;flex-shrink:0;"></span>
+              <span style="color:white;font-size:13px;">Pillar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== LESS ==================== -->
+<section class="section" id="less" style="background-color:#f5f5f5;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">LESS: Local Encoder for Spatial Sensing</h2>
+
+    <!-- Key insight text alongside video -->
+    <div class="columns is-vcentered" style="margin-bottom:2rem;">
+      <div class="column is-5">
+        <div class="content is-size-5">
+          <p>
+            The key insight behind LESS is that touch is inherently <em>local</em>: the tactile
+            response at a given position depends primarily on the nearby sub-surface structure, not
+            on distant regions</p>
+        </div>
+      </div>
+      <div class="column is-7">
+        <video autoplay muted loop playsinline style="width:100%;border-radius:10px;display:block;">
+          <source src="./static/videos/less/local_touch_demo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- LESS exploits... -->
+    <div class="columns is-centered" style="margin-bottom:2.5rem;">
+      <div class="column is-10">
+        <div class="content is-size-5">
+          <p>
+            We spread particles at a grid of locations and use pose-based force prediction to learn
+            a representation of the sequence of measurements in the receptive field around each
+            location</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Representation figure: full width -->
+    <figure class="image" style="margin-bottom:2.5rem;">
+      <img src="./static/images/less_representation.png" alt="LESS representation architecture">
+    </figure>
+
+    <!-- Reconstruction arch + text -->
+    <div class="columns is-vcentered">
+      <div class="column is-4">
+        <div class="content is-size-5">
+          <p>
+            We then use each encoding to reconstruct a patch of the final image, creating
+            an end-to-end local image prediction</p>
+        </div>
+      </div>
+      <div class="column is-8">
+        <figure class="image">
+          <img src="./static/images/less_reconstruction.png" alt="LESS patch reconstruction">
+        </figure>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== RESULTS ==================== -->
+<section class="section" id="results" style="background-color:#f5f5f5;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Results</h2>
+
+    <!-- Row 1: text left, pred/gt + PiP right -->
+    <div class="columns is-vcentered" style="margin-bottom:3.5rem;">
+      <div class="column is-4">
+        <div class="content is-size-5">
+          <p>
+            LESS is accurate in reconstructing the inner structure of a model from the
+            tactile sequence</p>
+        </div>
+      </div>
+      <div class="column is-8">
+        <div style="display:flex;gap:2px;">
+          <div style="position:relative;flex:1;">
+            <video autoplay controls muted loop playsinline style="width:100%;display:block;border-radius:6px 0 0 6px;">
+              <source src="./static/videos/reconstruction/gt_single.mp4" type="video/mp4">
+            </video>
+            <span style="position:absolute;top:8px;left:8px;color:white;font-size:18px;font-weight:bold;">GT</span>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+              <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+            </div>
+          </div>
+          <div style="position:relative;flex:1;">
+            <video autoplay controls muted loop playsinline style="width:100%;display:block;border-radius:0 6px 6px 0;">
+              <source src="./static/videos/reconstruction/pred_single.mp4" type="video/mp4">
+            </video>
+            <span style="position:absolute;top:8px;left:8px;color:white;font-size:18px;font-weight:bold;">Pred</span>
+            <span style="position:absolute;bottom:10px;left:8px;color:white;font-size:18px;font-weight:bold;">X50</span>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+              <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+            </div>
+            <video autoplay muted loop playsinline
+              style="position:absolute;bottom:10px;right:6px;width:38%;border-radius:4px;z-index:5;pointer-events:none;">
+              <source src="./static/videos/results/robot_primitives_pip.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: uncertainty videos left, text right -->
+    <div class="columns is-vcentered" style="margin-bottom:3.5rem;">
+      <div class="column is-8">
+        <div style="display:flex;gap:2px;">
+          <div style="position:relative;flex:1;">
+            <video autoplay controls muted loop playsinline style="width:100%;display:block;border-radius:6px 0 0 6px;">
+              <source src="./static/videos/uncertainty/confidence_2d.mp4" type="video/mp4">
+            </video>
+            <span style="position:absolute;top:8px;left:8px;color:black;font-size:18px;font-weight:bold;">Confidence</span>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+              <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+            </div>
+          </div>
+          <div style="position:relative;flex:1;">
+            <video autoplay controls muted loop playsinline style="width:100%;display:block;">
+              <source src="./static/videos/uncertainty/pred_2d.mp4" type="video/mp4">
+            </video>
+            <span style="position:absolute;top:8px;left:8px;color:white;font-size:18px;font-weight:bold;">Pred</span>
+            <span style="position:absolute;bottom:10px;left:8px;color:white;font-size:18px;font-weight:bold;">X50</span>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+              <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+            </div>
+          </div>
+          <div style="position:relative;flex:1;">
+            <img src="./static/videos/uncertainty/gt_2d.png" style="width:100%;display:block;border-radius:0 6px 6px 0;">
+            <span style="position:absolute;top:8px;left:8px;color:white;font-size:18px;font-weight:bold;">GT</span>
+          </div>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="content is-size-5">
+          <p>
+            Due to the localized prediction, LESS produces a useful local
+            uncertainty estimate</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: generalization heading -->
+    <div class="has-text-centered" style="margin-bottom:2rem;">
+      <p class="is-size-4 has-text-weight-semibold">
+        Due to the locality of LESS, we get an emergent compositional generalization</p>
+    </div>
+
+    <!-- Row 4: text left, 2×2 grid of pred videos right -->
+    <div class="columns is-vcentered">
+      <div class="column is-4">
+        <div class="content is-size-5">
+          <p>
+            The model was only trained on single inclusions and yet it generalizes to
+            multiple and connected ones at test time</p>
+        </div>
+      </div>
+      <div class="column is-8">
+        <div class="columns is-multiline is-mobile" style="gap:0;">
+
+          <div class="column is-half" style="padding:3px;">
+            <p style="font-size:13px;font-weight:bold;text-align:center;margin-bottom:3px;">Triple</p>
+            <div style="display:flex;gap:2px;">
+              <div style="position:relative;flex:1;">
+                <video autoplay controls muted loop playsinline style="width:100%;display:block;border-radius:6px 0 0 6px;">
+                  <source src="./static/videos/reconstruction/pred_triple.mp4" type="video/mp4">
+                </video>
+                <span style="position:absolute;top:5px;left:4px;color:white;font-size:11px;font-weight:bold;">Pred</span>
+                <span style="position:absolute;bottom:7px;left:4px;color:white;font-size:11px;font-weight:bold;">X50</span>
+                <div style="position:absolute;bottom:0;left:0;right:0;height:4px;background:rgba(0,0,0,0.25);pointer-events:none;">
+                  <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+                </div>
+              </div>
+              <div style="position:relative;flex:1;">
+                <img src="./static/images/gt_frames/gt_triple.png" style="width:100%;display:block;border-radius:0 6px 6px 0;">
+                <span style="position:absolute;top:5px;left:4px;color:white;font-size:11px;font-weight:bold;">GT</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-half" style="padding:3px;">
+            <p style="font-size:13px;font-weight:bold;text-align:center;margin-bottom:3px;">Double</p>
+            <div style="display:flex;gap:2px;">
+              <div style="position:relative;flex:1;">
+                <video autoplay controls muted loop playsinline style="width:100%;display:block;border-radius:6px 0 0 6px;">
+                  <source src="./static/videos/reconstruction/pred_double.mp4" type="video/mp4">
+                </video>
+                <span style="position:absolute;top:5px;left:4px;color:white;font-size:11px;font-weight:bold;">Pred</span>
+                <span style="position:absolute;bottom:7px;left:4px;color:white;font-size:11px;font-weight:bold;">X50</span>
+                <div style="position:absolute;bottom:0;left:0;right:0;height:4px;background:rgba(0,0,0,0.25);pointer-events:none;">
+                  <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+                </div>
+              </div>
+              <div style="position:relative;flex:1;">
+                <img src="./static/images/gt_frames/gt_double.png" style="width:100%;display:block;border-radius:0 6px 6px 0;">
+                <span style="position:absolute;top:5px;left:4px;color:white;font-size:11px;font-weight:bold;">GT</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-half" style="padding:3px;">
+            <p style="font-size:13px;font-weight:bold;text-align:center;margin-bottom:3px;">Connected Double</p>
+            <div style="display:flex;gap:2px;">
+              <div style="position:relative;flex:1;">
+                <video autoplay controls muted loop playsinline style="width:100%;display:block;border-radius:6px 0 0 6px;">
+                  <source src="./static/videos/reconstruction/pred_connected_double.mp4" type="video/mp4">
+                </video>
+                <span style="position:absolute;top:5px;left:4px;color:white;font-size:11px;font-weight:bold;">Pred</span>
+                <span style="position:absolute;bottom:7px;left:4px;color:white;font-size:11px;font-weight:bold;">X50</span>
+                <div style="position:absolute;bottom:0;left:0;right:0;height:4px;background:rgba(0,0,0,0.25);pointer-events:none;">
+                  <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+                </div>
+              </div>
+              <div style="position:relative;flex:1;">
+                <img src="./static/images/gt_frames/gt_connected_double.png" style="width:100%;display:block;border-radius:0 6px 6px 0;">
+                <span style="position:absolute;top:5px;left:4px;color:white;font-size:11px;font-weight:bold;">GT</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-half" style="padding:3px;">
+            <p style="font-size:13px;font-weight:bold;text-align:center;margin-bottom:3px;">Connected Triple</p>
+            <div style="display:flex;gap:2px;">
+              <div style="position:relative;flex:1;">
+                <video autoplay controls muted loop playsinline style="width:100%;display:block;border-radius:6px 0 0 6px;">
+                  <source src="./static/videos/reconstruction/pred_connected_triple.mp4" type="video/mp4">
+                </video>
+                <span style="position:absolute;top:5px;left:4px;color:white;font-size:11px;font-weight:bold;">Pred</span>
+                <span style="position:absolute;bottom:7px;left:4px;color:white;font-size:11px;font-weight:bold;">X50</span>
+                <div style="position:absolute;bottom:0;left:0;right:0;height:4px;background:rgba(0,0,0,0.25);pointer-events:none;">
+                  <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+                </div>
+              </div>
+              <div style="position:relative;flex:1;">
+                <img src="./static/images/gt_frames/gt_connected_triple.png" style="width:100%;display:block;border-radius:0 6px 6px 0;">
+                <span style="position:absolute;top:5px;left:4px;color:white;font-size:11px;font-weight:bold;">GT</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Big phantom generalization: video left, text right -->
+    <div class="columns is-vcentered" style="margin-top:3.5rem;">
+      <div class="column is-8">
+        <div style="position:relative;">
+          <video autoplay muted loop playsinline style="width:100%;border-radius:10px;display:block;">
+            <source src="./static/videos/results/large_phantom_x2.mp4" type="video/mp4">
+          </video>
+          <span style="position:absolute;top:8px;left:8px;color:white;font-size:28px;font-weight:bold;">X2</span>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="content is-size-5">
+          <p>
+            Our model can zero-shot generalize to X4 larger phantoms, while it was only
+            trained on a fixed size</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==================== Hand Held ==================== -->
+<section class="section" id="demo" style="background-color:#f5f5f5;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Hand Held</h2>
+
+    <!-- Intro text -->
+    <div class="columns is-centered" style="margin-bottom:3rem;">
+      <div class="column is-10">
+        <div class="content is-size-5">
+          <p>
+            Hand-held form factor is essential for clinical usability as it allows the physician
+            to maneuver and maintain patient contact during examination</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Primitives recording: text left, video right -->
+    <div class="columns is-vcentered" style="margin-bottom:3.5rem;">
+      <div class="column is-5">
+        <div class="content is-size-5">
+          <p>
+            To mitigate the distribution shift when moving to human motions, we collected data
+            from human-operated primitives</p>
+        </div>
+      </div>
+      <div class="column is-7">
+        <div style="position:relative;">
+          <video autoplay muted loop playsinline style="width:100%;border-radius:10px;display:block;">
+            <source src="./static/videos/hand_held/human_primitives_x2.mp4" type="video/mp4">
+          </video>
+          <span style="position:absolute;top:8px;left:10px;color:white;font-size:28px;font-weight:bold;">X2</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Robot primitives: video left, text right -->
+    <div class="columns is-vcentered" style="margin-bottom:3.5rem;">
+      <div class="column is-7">
+        <div style="position:relative;">
+          <video autoplay muted loop playsinline style="width:100%;border-radius:10px;display:block;">
+            <source src="./static/videos/hand_held/robot_primitives_x2.mp4" type="video/mp4">
+          </video>
+          <span style="position:absolute;top:8px;left:10px;color:white;font-size:28px;font-weight:bold;">X2</span>
+        </div>
+      </div>
+      <div class="column is-5">
+        <div class="content is-size-5">
+          <p>
+            These primitives are crucial for effective transfer to human motions</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fiducial system: text left, video right -->
+    <div class="columns is-vcentered" style="margin-bottom:3.5rem;">
+      <div class="column is-5">
+        <div class="content is-size-5">
+          <p>
+            To estimate the sensor pose, in place of the robot kinematics, we use a
+            fiducial-based system</p>
+        </div>
+      </div>
+      <div class="column is-7">
+        <video autoplay muted loop playsinline style="width:100%;border-radius:10px;display:block;">
+          <source src="./static/videos/hand_held/fiducial_pose.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Hand-held demo: video left, text right -->
+    <div class="columns is-vcentered" style="margin-bottom:3.5rem;">
+      <div class="column is-7">
+        <video autoplay muted loop playsinline style="width:100%;border-radius:10px;display:block;">
+          <source src="./static/videos/hand_held/handheld_demo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-5">
+        <div class="content is-size-5">
+          <p>
+            We show a proof-of-concept, real-time hand-held tactile imaging. Here, an operator
+            can observe the model prediction and uncertainty in order to aim their movements</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pred + GT pair: text left, videos right -->
+    <div class="columns is-vcentered">
+      <div class="column is-5">
+        <div class="content is-size-5">
+          <p>
+            Finally, we produce an estimated prediction for the internal structure</p>
+        </div>
+      </div>
+      <div class="column is-7">
+        <div style="display:flex;gap:2px;">
+          <div style="position:relative;flex:1;">
+            <video autoplay controls muted loop playsinline style="width:100%;display:block;border-radius:6px 0 0 6px;">
+              <source src="./static/videos/hand_held/handheld_pred.mp4" type="video/mp4">
+            </video>
+            <span style="position:absolute;top:8px;left:8px;color:white;font-size:18px;font-weight:bold;">Pred</span>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+              <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+            </div>
+          </div>
+          <div style="position:relative;flex:1;">
+            <video autoplay controls muted loop playsinline style="width:100%;display:block;border-radius:0 6px 6px 0;">
+              <source src="./static/videos/hand_held/handheld_gt.mp4" type="video/mp4">
+            </video>
+            <span style="position:absolute;top:8px;left:8px;color:white;font-size:18px;font-weight:bold;">GT</span>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+              <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==================== CITATION ==================== -->
+<section class="section" id="citation" style="background-color:#f5f5f5;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <pre style="background:#e8e8e8;color:#333;border-radius:8px;padding:1.5rem;font-size:0.9rem;overflow-x:auto;"><code>@inproceedings{rimon2025less,
+  title     = {More with {LESS}: Local Scene Representations for Tactile Imaging},
+  author    = {Rimon, Zohar and Shafer, Elisei and Tepper, Tal and Kozin, Daniel
+               and Malka, Alon and Holland, Roy and Tamar, Aviv},
+  booktitle = {Robotics: Science and Systems},
+  year      = {2026}
+}</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/">
+         style="color:#aaa;cursor:default;pointer-events:none;">
         <i class="fas fa-file-pdf"></i>
       </a>
       <a class="icon-link" href="https://github.com/zoharri/LESS" class="external-link" disabled>
@@ -182,17 +947,25 @@
           <p>
             This website is licensed under a <a rel="license"
                                                 href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
+            Commons Attribution-ShareAlike 4.0 International License</a></p>
           <p>
             Template is based on <a
-              href="https://github.com/nerfies/nerfies.github.io">github.com/nerfies/nerfies.github.io</a>.
-          </p>
+              href="https://github.com/nerfies/nerfies.github.io">github.com/nerfies/nerfies.github.io</a></p>
         </div>
       </div>
     </div>
   </div>
 </footer>
 
+<script>
+  setInterval(function() {
+    document.querySelectorAll('.pred-progress-fill').forEach(function(fill) {
+      var video = fill.parentElement.parentElement.querySelector('video');
+      if (video && video.duration) {
+        fill.style.width = (video.currentTime / video.duration * 100) + '%';
+      }
+    });
+  }, 100);
+</script>
 </body>
 </html>
