@@ -3,8 +3,14 @@ Source code for the [LESS website](https://zoharri.github.io/LESS/).
 
 If you find this paper useful for your work please cite:
 
-```
-TBD
+```bibtex
+@inproceedings{rimon2025less,
+  title     = {More with {LESS}: Local Scene Representations for Tactile Imaging},
+  author    = {Rimon, Zohar and Shafer, Elisei and Tepper, Tal and Kozin, Daniel
+               and Malka, Alon and Holland, Roy and Tamar, Aviv},
+  booktitle = {Robotics: Science and Systems},
+  year      = {2026}
+}
 ```
 
 # Website License

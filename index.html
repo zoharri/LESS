@@ -160,10 +160,25 @@
 <section class="hero teaser" style="background-color:#f5f5f5;">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline style="width:60%;display:block;margin:0 auto;">
-        <source src="./static/videos/hand_held/handheld_demo.mp4"
-                type="video/mp4">
-      </video>
+      <div style="display:flex;gap:2px;width:70%;margin:0 auto;">
+        <div style="position:relative;flex:1;">
+          <video autoplay muted loop playsinline style="width:100%;display:block;border-radius:6px 0 0 6px;">
+            <source src="./static/videos/reconstruction/gt_single.mp4" type="video/mp4">
+          </video>
+          <span style="position:absolute;top:8px;left:8px;color:white;font-size:16px;font-weight:bold;">GT</span>
+        </div>
+        <div style="position:relative;flex:1;">
+          <video autoplay muted loop playsinline style="width:100%;display:block;border-radius:0 6px 6px 0;">
+            <source src="./static/videos/reconstruction/pred_single.mp4" type="video/mp4">
+          </video>
+          <span style="position:absolute;top:8px;left:8px;color:white;font-size:16px;font-weight:bold;">Pred</span>
+          <span style="position:absolute;bottom:10px;left:8px;color:white;font-size:16px;font-weight:bold;">X50</span>
+          <video autoplay muted loop playsinline
+            style="position:absolute;bottom:10px;right:6px;width:38%;border-radius:4px;z-index:5;pointer-events:none;">
+            <source src="./static/videos/results/robot_primitives_pip.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
       <h2 class="subtitle has-text-centered" style="margin-top:1rem;">
         Data Driven, 3D, Hand-Held, Generalizable Tactile Imaging
       </h2>
@@ -189,7 +204,7 @@
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
             </div>
             <div style="position:relative;flex:1;">
-              <img src="./static/images/gt_frames/gt_single_2.png" style="width:100%;display:block;">
+              <img src="./static/images/gt_frames/gt_single_2.jpg" style="width:100%;display:block;">
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
             </div>
           </div>
@@ -208,7 +223,7 @@
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
             </div>
             <div style="position:relative;flex:1;">
-              <img src="./static/images/gt_frames/gt_connected_triple.png" style="width:100%;display:block;">
+              <img src="./static/images/gt_frames/gt_connected_triple.jpg" style="width:100%;display:block;">
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
             </div>
           </div>
@@ -227,7 +242,7 @@
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
             </div>
             <div style="position:relative;flex:1;">
-              <img src="./static/images/gt_frames/gt_single_0.png" style="width:100%;display:block;">
+              <img src="./static/images/gt_frames/gt_single_0.jpg" style="width:100%;display:block;">
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
             </div>
           </div>
@@ -246,7 +261,7 @@
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
             </div>
             <div style="position:relative;flex:1;">
-              <img src="./static/images/gt_frames/gt_double.png" style="width:100%;display:block;">
+              <img src="./static/images/gt_frames/gt_double.jpg" style="width:100%;display:block;">
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
             </div>
           </div>
@@ -265,7 +280,7 @@
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
             </div>
             <div style="position:relative;flex:1;">
-              <img src="./static/images/gt_frames/gt_single_4.png" style="width:100%;display:block;">
+              <img src="./static/images/gt_frames/gt_single_4.jpg" style="width:100%;display:block;">
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
             </div>
           </div>
@@ -284,7 +299,7 @@
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
             </div>
             <div style="position:relative;flex:1;">
-              <img src="./static/images/gt_frames/gt_connected_double.png" style="width:100%;display:block;">
+              <img src="./static/images/gt_frames/gt_connected_double.jpg" style="width:100%;display:block;">
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
             </div>
           </div>
@@ -303,7 +318,7 @@
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
             </div>
             <div style="position:relative;flex:1;">
-              <img src="./static/images/gt_frames/gt_single_1.png" style="width:100%;display:block;">
+              <img src="./static/images/gt_frames/gt_single_1.jpg" style="width:100%;display:block;">
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
             </div>
           </div>
@@ -322,7 +337,7 @@
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
             </div>
             <div style="position:relative;flex:1;">
-              <img src="./static/images/gt_frames/gt_triple.png" style="width:100%;display:block;">
+              <img src="./static/images/gt_frames/gt_triple.jpg" style="width:100%;display:block;">
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
             </div>
           </div>
@@ -341,7 +356,7 @@
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">Pred</span>
             </div>
             <div style="position:relative;flex:1;">
-              <img src="./static/images/gt_frames/gt_single_3.png" style="width:100%;display:block;">
+              <img src="./static/images/gt_frames/gt_single_3.jpg" style="width:100%;display:block;">
               <span style="position:absolute;top:8px;left:8px;color:white;font-size:14px;font-weight:bold;">GT</span>
             </div>
           </div>
@@ -358,7 +373,7 @@
     <h2 class="title is-3 has-text-centered">Overview</h2>
 
     <figure class="image" style="margin-bottom:2.5rem;">
-      <img src="./static/images/overview_figure.png" alt="LESS overview: data collection, local encoder, zero-shot generalization, real-time hand-held demo">
+      <img src="./static/images/overview_figure.jpg" alt="LESS overview: data collection, local encoder, zero-shot generalization, real-time hand-held demo">
     </figure>
 
     <div class="columns is-centered">
@@ -697,7 +712,7 @@
                 </div>
               </div>
               <div style="position:relative;flex:1;">
-                <img src="./static/images/gt_frames/gt_triple.png" style="width:100%;display:block;border-radius:0 6px 6px 0;">
+                <img src="./static/images/gt_frames/gt_triple.jpg" style="width:100%;display:block;border-radius:0 6px 6px 0;">
                 <span style="position:absolute;top:5px;left:4px;color:white;font-size:11px;font-weight:bold;">GT</span>
               </div>
             </div>
@@ -717,7 +732,7 @@
                 </div>
               </div>
               <div style="position:relative;flex:1;">
-                <img src="./static/images/gt_frames/gt_double.png" style="width:100%;display:block;border-radius:0 6px 6px 0;">
+                <img src="./static/images/gt_frames/gt_double.jpg" style="width:100%;display:block;border-radius:0 6px 6px 0;">
                 <span style="position:absolute;top:5px;left:4px;color:white;font-size:11px;font-weight:bold;">GT</span>
               </div>
             </div>
@@ -737,7 +752,7 @@
                 </div>
               </div>
               <div style="position:relative;flex:1;">
-                <img src="./static/images/gt_frames/gt_connected_double.png" style="width:100%;display:block;border-radius:0 6px 6px 0;">
+                <img src="./static/images/gt_frames/gt_connected_double.jpg" style="width:100%;display:block;border-radius:0 6px 6px 0;">
                 <span style="position:absolute;top:5px;left:4px;color:white;font-size:11px;font-weight:bold;">GT</span>
               </div>
             </div>
@@ -757,7 +772,7 @@
                 </div>
               </div>
               <div style="position:relative;flex:1;">
-                <img src="./static/images/gt_frames/gt_connected_triple.png" style="width:100%;display:block;border-radius:0 6px 6px 0;">
+                <img src="./static/images/gt_frames/gt_connected_triple.jpg" style="width:100%;display:block;border-radius:0 6px 6px 0;">
                 <span style="position:absolute;top:5px;left:4px;color:white;font-size:11px;font-weight:bold;">GT</span>
               </div>
             </div>
