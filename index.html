@@ -162,21 +162,27 @@
     <div class="hero-body">
       <div style="display:flex;gap:2px;width:70%;margin:0 auto;">
         <div style="position:relative;flex:1;">
-          <video autoplay muted loop playsinline style="width:100%;display:block;border-radius:6px 0 0 6px;">
-            <source src="./static/videos/reconstruction/gt_single.mp4" type="video/mp4">
-          </video>
-          <span style="position:absolute;top:8px;left:8px;color:white;font-size:16px;font-weight:bold;">GT</span>
-        </div>
-        <div style="position:relative;flex:1;">
-          <video autoplay muted loop playsinline style="width:100%;display:block;border-radius:0 6px 6px 0;">
+          <video autoplay muted loop playsinline data-sync-group="teaser" style="width:100%;display:block;border-radius:6px 0 0 6px;">
             <source src="./static/videos/reconstruction/pred_single.mp4" type="video/mp4">
           </video>
           <span style="position:absolute;top:8px;left:8px;color:white;font-size:16px;font-weight:bold;">Pred</span>
           <span style="position:absolute;bottom:10px;left:8px;color:white;font-size:16px;font-weight:bold;">X50</span>
-          <video autoplay muted loop playsinline
+          <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+            <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+          </div>
+          <video autoplay muted loop playsinline data-sync-group="teaser"
             style="position:absolute;bottom:10px;right:6px;width:38%;border-radius:4px;z-index:5;pointer-events:none;">
             <source src="./static/videos/results/robot_primitives_pip.mp4" type="video/mp4">
           </video>
+        </div>
+        <div style="position:relative;flex:1;">
+          <video autoplay muted loop playsinline data-sync-group="teaser" style="width:100%;display:block;border-radius:0 6px 6px 0;">
+            <source src="./static/videos/reconstruction/gt_single.mp4" type="video/mp4">
+          </video>
+          <span style="position:absolute;top:8px;left:8px;color:white;font-size:16px;font-weight:bold;">GT</span>
+          <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+            <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+          </div>
         </div>
       </div>
       <h2 class="subtitle has-text-centered" style="margin-top:1rem;">
@@ -488,7 +494,7 @@
     <!-- Row 2: video LEFT, text RIGHT -->
     <div class="columns is-vcentered" style="margin-bottom:3rem;">
       <div class="column is-7">
-        <div style="position:relative;">
+        <div style="position:relative;width:70%;">
           <video autoplay muted loop playsinline style="width:100%;border-radius:10px;display:block;">
             <source src="./static/videos/data_collection/data_collection_timelapse.mp4" type="video/mp4">
           </video>
@@ -616,16 +622,7 @@
       <div class="column is-8">
         <div style="display:flex;gap:2px;">
           <div style="position:relative;flex:1;">
-            <video autoplay controls muted loop playsinline style="width:100%;display:block;border-radius:6px 0 0 6px;">
-              <source src="./static/videos/reconstruction/gt_single.mp4" type="video/mp4">
-            </video>
-            <span style="position:absolute;top:8px;left:8px;color:white;font-size:18px;font-weight:bold;">GT</span>
-            <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
-              <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
-            </div>
-          </div>
-          <div style="position:relative;flex:1;">
-            <video autoplay controls muted loop playsinline style="width:100%;display:block;border-radius:0 6px 6px 0;">
+            <video autoplay controls muted loop playsinline data-sync-group="results-main" style="width:100%;display:block;border-radius:6px 0 0 6px;">
               <source src="./static/videos/reconstruction/pred_single.mp4" type="video/mp4">
             </video>
             <span style="position:absolute;top:8px;left:8px;color:white;font-size:18px;font-weight:bold;">Pred</span>
@@ -633,10 +630,19 @@
             <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
               <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
             </div>
-            <video autoplay muted loop playsinline
+            <video autoplay muted loop playsinline data-sync-group="results-main"
               style="position:absolute;bottom:10px;right:6px;width:38%;border-radius:4px;z-index:5;pointer-events:none;">
               <source src="./static/videos/results/robot_primitives_pip.mp4" type="video/mp4">
             </video>
+          </div>
+          <div style="position:relative;flex:1;">
+            <video autoplay controls muted loop playsinline data-sync-group="results-main" style="width:100%;display:block;border-radius:0 6px 6px 0;">
+              <source src="./static/videos/reconstruction/gt_single.mp4" type="video/mp4">
+            </video>
+            <span style="position:absolute;top:8px;left:8px;color:white;font-size:18px;font-weight:bold;">GT</span>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
+              <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -647,7 +653,7 @@
       <div class="column is-8">
         <div style="display:flex;gap:2px;">
           <div style="position:relative;flex:1;">
-            <video autoplay controls muted loop playsinline style="width:100%;display:block;border-radius:6px 0 0 6px;">
+            <video autoplay controls muted loop playsinline data-sync-group="uncertainty" style="width:100%;display:block;border-radius:6px 0 0 6px;">
               <source src="./static/videos/uncertainty/confidence_2d.mp4" type="video/mp4">
             </video>
             <span style="position:absolute;top:8px;left:8px;color:black;font-size:18px;font-weight:bold;">Confidence</span>
@@ -656,7 +662,7 @@
             </div>
           </div>
           <div style="position:relative;flex:1;">
-            <video autoplay controls muted loop playsinline style="width:100%;display:block;">
+            <video autoplay controls muted loop playsinline data-sync-group="uncertainty" style="width:100%;display:block;">
               <source src="./static/videos/uncertainty/pred_2d.mp4" type="video/mp4">
             </video>
             <span style="position:absolute;top:8px;left:8px;color:white;font-size:18px;font-weight:bold;">Pred</span>
@@ -901,7 +907,7 @@
       <div class="column is-7">
         <div style="display:flex;gap:2px;">
           <div style="position:relative;flex:1;">
-            <video autoplay controls muted loop playsinline style="width:100%;display:block;border-radius:6px 0 0 6px;">
+            <video autoplay controls muted loop playsinline data-sync-group="handheld-final" style="width:100%;display:block;border-radius:6px 0 0 6px;">
               <source src="./static/videos/hand_held/handheld_pred.mp4" type="video/mp4">
             </video>
             <span style="position:absolute;top:8px;left:8px;color:white;font-size:18px;font-weight:bold;">Pred</span>
@@ -910,7 +916,7 @@
             </div>
           </div>
           <div style="position:relative;flex:1;">
-            <video autoplay controls muted loop playsinline style="width:100%;display:block;border-radius:0 6px 6px 0;">
+            <video autoplay controls muted loop playsinline data-sync-group="handheld-final" style="width:100%;display:block;border-radius:0 6px 6px 0;">
               <source src="./static/videos/hand_held/handheld_gt.mp4" type="video/mp4">
             </video>
             <span style="position:absolute;top:8px;left:8px;color:white;font-size:18px;font-weight:bold;">GT</span>
@@ -981,6 +987,31 @@
       }
     });
   }, 100);
+
+  (function() {
+    var syncing = {};
+    function syncGroup(source) {
+      var group = source.getAttribute('data-sync-group');
+      if (syncing[group]) return;
+      syncing[group] = true;
+      document.querySelectorAll('video[data-sync-group="' + group + '"]').forEach(function(v) {
+        if (v !== source) {
+          if (Math.abs(v.currentTime - source.currentTime) > 0.1) {
+            v.currentTime = source.currentTime;
+          }
+          if (source.paused && !v.paused) v.pause();
+          if (!source.paused && v.paused) v.play().catch(function(){});
+        }
+      });
+      syncing[group] = false;
+    }
+    document.querySelectorAll('video[data-sync-group]').forEach(function(v) {
+      v.addEventListener('timeupdate', function() { syncGroup(this); });
+      v.addEventListener('play', function() { syncGroup(this); });
+      v.addEventListener('pause', function() { syncGroup(this); });
+      v.addEventListener('seeked', function() { syncGroup(this); });
+    });
+  })();
 </script>
 </body>
 </html>
