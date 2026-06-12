@@ -99,9 +99,8 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a class="external-link button is-normal is-rounded"
-                   style="background:#aaa;border-color:#aaa;color:#fff;cursor:default;pointer-events:none;"
-                   title="Coming soon">
+                <a href="./static/paper/more_with_less.pdf" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
@@ -160,30 +159,10 @@
 <section class="hero teaser" style="background-color:#f5f5f5;">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <div style="display:flex;gap:2px;width:70%;margin:0 auto;">
-        <div style="position:relative;flex:1;">
-          <video autoplay muted loop playsinline data-sync-group="teaser" style="width:100%;display:block;border-radius:6px 0 0 6px;">
-            <source src="./static/videos/reconstruction/pred_single.mp4" type="video/mp4">
-          </video>
-          <span style="position:absolute;top:8px;left:8px;color:white;font-size:16px;font-weight:bold;">Pred</span>
-          <span style="position:absolute;bottom:10px;left:8px;color:white;font-size:16px;font-weight:bold;">X50</span>
-          <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
-            <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
-          </div>
-          <video autoplay muted loop playsinline data-sync-group="teaser"
-            style="position:absolute;bottom:10px;right:6px;width:38%;border-radius:4px;z-index:5;pointer-events:none;">
-            <source src="./static/videos/results/robot_primitives_pip.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div style="position:relative;flex:1;">
-          <video autoplay muted loop playsinline data-sync-group="teaser" style="width:100%;display:block;border-radius:0 6px 6px 0;">
-            <source src="./static/videos/reconstruction/gt_single.mp4" type="video/mp4">
-          </video>
-          <span style="position:absolute;top:8px;left:8px;color:white;font-size:16px;font-weight:bold;">GT</span>
-          <div style="position:absolute;bottom:0;left:0;right:0;height:5px;background:rgba(0,0,0,0.25);pointer-events:none;">
-            <div class="pred-progress-fill" style="height:100%;width:0%;background:#fff;transition:width 0.2s linear;"></div>
-          </div>
-        </div>
+      <div style="width:50%;margin:0 auto;border-radius:6px;overflow:hidden;">
+        <video autoplay muted loop playsinline style="width:100%;display:block;">
+          <source src="./static/videos/hand_held/handheld_demo.mp4" type="video/mp4">
+        </video>
       </div>
       <h2 class="subtitle has-text-centered" style="margin-top:1rem;">
         Data Driven, 3D, Hand-Held, Generalizable Tactile Imaging
