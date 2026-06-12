@@ -1,0 +1,12 @@
+constant_force_norm: 10
+dataset:
+  real_data: true
+  max_traj_length: 500
+  three_dim: true
+models:
+  downstream_model:
+    name: TransposedConvImagePred3D
+    transposed_conv_image_pred_3d:
+      num_channels: 512
+      num_bins: 4
+      amount_of_slices: 26

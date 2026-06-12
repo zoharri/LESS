@@ -1,0 +1,16 @@
+constant_force_norm: 0.004
+models:
+  rep_learning_model:
+    reconstruction_model:
+      force_size: 32
+      locations_size: 2
+      decoder_input_embed_dim: 2048
+      gru_input_embed_dim: 256
+    particles_reconstruction_model:
+      force_size: 32
+      locations_size: 2
+      decoder_input_embed_dim: 2048
+      gru_input_embed_dim: 256
+  downstream_model:
+    transposed_conv_image_pred:
+      num_channels: 8

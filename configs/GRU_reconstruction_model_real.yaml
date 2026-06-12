@@ -1,0 +1,9 @@
+constant_force_norm: 10
+dataset:
+  real_data: true
+  max_traj_length: 500
+  sensor_subsample: 50
+models:
+  downstream_model:
+    transposed_conv_image_pred:
+      num_channels: 8

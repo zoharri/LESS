@@ -1,0 +1,16 @@
+numpy==1.26.4
+matplotlib
+torch==2.6
+torchvision
+pyrallis
+wandb==0.17.0
+h5py
+scikit-learn
+pandas
+opencv-python
+plotly
+seaborn
+tqdm
+pyvista
+einops
+torch_ema

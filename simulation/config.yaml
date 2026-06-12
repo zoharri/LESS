@@ -1,0 +1,59 @@
+breast_model:
+  grid_size: 0.15
+  grid_type: square
+  lump:
+    center:
+      - 0.6286682334575532
+      - 0.30969765410374905
+    include_lump: true
+    poisson_ratio: 0.1
+    radius: 0.15049341374504144
+    young_modulus: 0.01
+  num_inner_points: 200
+  perimeter_grid_size: 0.1
+  poisson_ratio: 0.0985774448777911
+  poisson_ratio_var: 0.010000000000000002
+  radius: 1.0228205439142908
+  random_vertices_std: 0.0
+  young_modulus: 0.0028929651688723097
+  young_modulus_var: 0.0002
+probe:
+  center:
+    - 0.8
+    - 0.85
+  num_points: 16
+  radius: 0.1
+  trajectories:
+    frames:
+      - 10
+      - 10
+    params:
+      - T: 1.0
+        x0: 1.0674301481036983
+        x1: 0.9466631886883394
+        y0: 0.3555963099268587
+        y1: 0.3153648388507613
+      - T: 1.0
+        x0: 1.0398833942490877
+        x1: 0.9124394934674992
+        y0: 0.42953274971680416
+        y1: 0.37689095406924444
+    type:
+      - TwoPointTrajectory
+      - TwoPointTrajectory
+simulation:
+  adam_beta_1: 0.2
+  adam_beta_2: 0.999
+  collision_spring_constant: 0.01
+  dt: 0.1
+  frames: 0
+  learning_rate: 0.001
+  observation_noise: 0.1
+  opaque_model: false
+  probe_force_noise_std: 0.0001
+  save_folder: ./data/sim_example
+  save_images: true
+  save_vectors: true
+  save_video: true
+  steps: 1000
+  warmup: true

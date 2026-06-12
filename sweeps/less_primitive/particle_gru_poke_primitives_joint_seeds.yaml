@@ -1,0 +1,52 @@
+command:
+- python3
+- ${program}
+- ${args}
+method: grid
+metric:
+  goal: minimize
+  name: Test all_forces_loss
+name: particle_gru_poke_primitives_joint_seeds
+parameters:
+  config_path:
+    value: configs/GRU_reconstruction_model_real.yaml
+  data_loader.batch_size:
+    value: 2
+  dataset.amount_of_data:
+    value: -1
+  dataset.balance_training_keyword:
+    values:
+    - ''
+  dataset.data_folder:
+    value: data/data_poke_primitive
+  dataset.max_traj_length:
+    value: 500
+  dataset.num_training_trajs:
+    value: 100
+  dataset.sensor_subsample:
+    values:
+    - 10
+  dataset.split_type:
+    value: keyword_primitives
+  models.rep_learning_model.name:
+    value: ParticlesReconstructionModel
+  models.rep_learning_model.particles_reconstruction_model.input_num_random_samples:
+    value: 8
+  models.rep_learning_model.particles_reconstruction_model.max_particle_distance:
+    values:
+    - 0.6
+  models.rep_learning_model.particles_reconstruction_model.reconstruction_num_random_samples:
+    value: 8
+  models.rep_learning_model.particles_reconstruction_model.representation_size:
+    value: 1024
+  num_epochs:
+    value: 500
+  optimizer.disable_downstream_model:
+    value: true
+  random_seed:
+    values:
+    - 0
+    - 1
+    - 2
+program: train_rep_and_downstream.py
+project: imaging

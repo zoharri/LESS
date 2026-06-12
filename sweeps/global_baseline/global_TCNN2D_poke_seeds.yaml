@@ -1,0 +1,38 @@
+command:
+- python3
+- ${program}
+- ${args}
+method: grid
+metric:
+  goal: maximize
+  name: 2D/f1_score
+name: global_TCNN2D_poke_seeds
+parameters:
+  config_path:
+    value: configs/GRU_reconstruction_model_real.yaml
+  data_loader.batch_size:
+    value: 2
+  dataset.three_dim:
+    value: false
+  models.downstream_model.name:
+    value: TransposedConvImagePred
+  models.downstream_model.transposed_conv_image_pred.dropout:
+    value: 0
+  models.downstream_model.transposed_conv_image_pred.loss:
+    value: dice_focal
+  models.downstream_model.transposed_conv_image_pred.num_channels:
+    value: 2048
+  models.rep_learning_model_checkpoint:
+    values:
+    - checkpoints/TBD/best_rep_model.pt
+    - checkpoints/TBD/best_rep_model.pt
+    - checkpoints/TBD/best_rep_model.pt
+  num_epochs:
+    value: 300
+  optimizer.disable_downstream_model:
+    value: false
+  optimizer.freeze_rep_learning_model:
+    values:
+    - true
+program: train_rep_and_downstream.py
+project: imaging

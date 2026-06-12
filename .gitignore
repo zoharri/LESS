@@ -1,0 +1,21 @@
+# .gitignore
+simulation/data/
+data/
+.venv/
+.DS_Store
+wandb/
+__pycache__/
+.idea/
+.history/
+output/
+outputs/
+real_data/
+notebooks/
+paper_notebooks/
+screenshots/
+scripts/outputs/
+.codex
+checkpoints/
+.vscode/
+logs/
+CLAUDE.md
