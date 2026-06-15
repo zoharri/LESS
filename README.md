@@ -5,11 +5,11 @@ Technion – Israel Institute of Technology &nbsp;|&nbsp; Robotics: Science and 
 
 [![Website](https://img.shields.io/badge/Website-zoharri.github.io/LESS-blue)](https://zoharri.github.io/LESS/)
 [![arXiv](https://img.shields.io/badge/arXiv-2606.14344-b31b1b.svg)](https://arxiv.org/abs/2606.14344)
-[![Paper](https://img.shields.io/badge/Paper-PDF-red)](https://raw.githubusercontent.com/zoharri/LESS/master/static/paper/more_with_less.pdf)
+[![Paper](https://img.shields.io/badge/Paper-PDF-red)](assets/more_with_less.pdf)
 [![Data](https://img.shields.io/badge/Data-Zenodo-green)](https://zenodo.org/communities/artificial-palpation)
 
 <p align="center">
-  <video src="https://github.com/user-attachments/assets/5cd6437b-ac6f-4ac5-ba97-c15e9cba6b01" autoplay loop muted playsinline style="max-width:65%;border-radius:6px;"></video>
+  <img src="assets/teaser.gif" alt="LESS teaser" width="300">
 </p>
 
 > Data Driven, 3D, Hand-Held, Generalizable Tactile Imaging.
