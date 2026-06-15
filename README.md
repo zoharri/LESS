@@ -4,10 +4,12 @@
 Technion – Israel Institute of Technology &nbsp;|&nbsp; Robotics: Science and Systems 2026
 
 [![Website](https://img.shields.io/badge/Website-zoharri.github.io/LESS-blue)](https://zoharri.github.io/LESS/)
+[![arXiv](https://img.shields.io/badge/arXiv-2606.14344-b31b1b.svg)](https://arxiv.org/abs/2606.14344)
+[![Paper](https://img.shields.io/badge/Paper-PDF-red)](https://raw.githubusercontent.com/zoharri/LESS/master/static/paper/more_with_less.pdf)
 [![Data](https://img.shields.io/badge/Data-Zenodo-green)](https://zenodo.org/communities/artificial-palpation)
 
 <p align="center">
-  <video src="assets/teaser.mp4" autoplay loop muted playsinline style="max-width:65%;border-radius:6px;"></video>
+  <video src="https://github.com/user-attachments/assets/5cd6437b-ac6f-4ac5-ba97-c15e9cba6b01" autoplay loop muted playsinline style="max-width:65%;border-radius:6px;"></video>
 </p>
 
 > Data Driven, 3D, Hand-Held, Generalizable Tactile Imaging.
@@ -36,7 +38,7 @@ bash download_data.sh multi                 # multi-tumor set only
 bash download_data.sh handheld              # hand-held set only
 ```
 
-### data-poke-primitive ~213 GB
+### data-poke-primitive ~213 GB — [Zenodo record (poke)](https://zenodo.org/records/20367204) | [Zenodo record (primitive)](https://zenodo.org/records/20367198)
 
 The primary training set used in the paper. Contains palpation trajectories over a set of breast phantoms with spherical inserts, collected with a robot arm at controlled poke speeds. Both *poke* and *primitive* subsets are merged into a single directory (`data/data_poke_primitive/`).
 
